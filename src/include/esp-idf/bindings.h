@@ -16,6 +16,12 @@
 #include "esp_interface.h"
 #include "esp_ipc.h"
 
+#ifdef ESP_IDF_COMP_CONSOLE_ENABLED
+#include "esp_console.h"
+#include "linenoise/linenoise.h"
+#include "argtable3/argtable3.h"
+#endif
+
 #ifdef ESP_IDF_COMP_ESP_PM_ENABLED
 #include "esp_pm.h"
 #endif
@@ -54,6 +60,10 @@
 #ifdef ESP_IDF_COMP_ESP_NETIF_ENABLED
 #include "esp_eth_netif_glue.h"
 #endif
+#endif
+
+#ifdef ESP_IDF_COMP_ESP_WEBSOCKET_CLIENT_ENABLED
+#include "esp_websocket_client.h"
 #endif
 
 #ifdef ESP_IDF_COMP_VFS_ENABLED
